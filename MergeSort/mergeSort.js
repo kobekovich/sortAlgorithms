@@ -1,4 +1,18 @@
-let inputArray = [1,3,5,4,-9,-99,-100,4,4,2,3,1,7,8];
+let inputArray = [];
+let inputArrayLength = 10000;
+
+function fillInputArray() {
+  let multipliers = [-1000,-100,100,1000];
+  let multipliersLength = multipliers.length;
+  
+  for (let i = 1; i < inputArrayLength; i++) {
+      let randomMultiplier = Math.floor(Math.random() * multipliersLength);
+      let randomNumber = Math.round(Math.random() * multipliers[randomMultiplier]);
+      inputArray.push(randomNumber);
+  }
+
+  return console.log("Input array: " + inputArray);
+}
 
 function divide(array) {
   
@@ -30,4 +44,8 @@ function merge(leftAr, rightAr) {
   } return outputArray.concat(leftAr.slice(i),rightAr.slice(j));
 }
 
-console.log(divide(inputArray));
+fillInputArray();
+let startTime = new Date();
+console.log("Output array: " + divide(inputArray));
+let finishTime = new Date() - startTime;
+console.log("Sort time : " + finishTime + " mss");
