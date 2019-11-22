@@ -1,6 +1,19 @@
-
-let inputArray = [55, -20, -10, 0, -740, -22222, 22222, 11, -34, 55, -740, 0, 0];
+let inputArray = [];
+let inputArrayLength = 10000;
 let outputArray = [];
+
+function fillInputArray() {
+    let multipliers = [-1000,-100,100,1000];
+    let multipliersLength = multipliers.length;
+    
+    for (let i = 1; i < inputArrayLength; i++) {
+        let randomMultiplier = Math.floor(Math.random() * multipliersLength);
+        let randomNumber = Math.round(Math.random() * multipliers[randomMultiplier]);
+        inputArray.push(randomNumber);
+    }
+
+    return inputArray;
+}
 
 class Tree {
 
@@ -56,9 +69,15 @@ function goSort() {
 function showResult() {
     console.log("Input array: " + inputArray);
     console.log("Output array: " + outputArray);
+    console.log("Sort time : " + finishTime + " mss");
 }
 
+fillInputArray();
+
+let startTime = new Date();
 let tree = new Tree(inputArray[0]);
 insertIntoTree();
 goSort();
-showResult()
+let finishTime = new Date() - startTime;
+
+showResult();
