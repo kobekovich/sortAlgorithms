@@ -1,19 +1,3 @@
-let inputArray = [];
-let inputArrayLength = 10000;
-
-function fillInputArray() {
-  let multipliers = [-1000,-100,100,1000];
-  let multipliersLength = multipliers.length;
-  
-  for (let i = 1; i < inputArrayLength; i++) {
-      let randomMultiplier = Math.floor(Math.random() * multipliersLength);
-      let randomNumber = Math.round(Math.random() * multipliers[randomMultiplier]);
-      inputArray.push(randomNumber);
-  }
-
-  return console.log("Input array: " + inputArray);
-}
-
 function divide(array) {
   
   let arrayLength = array.length;
@@ -44,7 +28,6 @@ function merge(leftAr, rightAr) {
   } return outputArray.concat(leftAr.slice(i),rightAr.slice(j));
 }
 
-fillInputArray();
 let startTime = new Date();
 console.log("Output array: " + divide(inputArray));
 let finishTime = new Date() - startTime;
