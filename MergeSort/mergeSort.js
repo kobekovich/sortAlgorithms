@@ -1,5 +1,3 @@
-let inputArray = [1,3,5,4,-9,-99,-100,4,4,2,3,1,7,8];
-
 function divide(array) {
   
   let arrayLength = array.length;
@@ -30,4 +28,7 @@ function merge(leftAr, rightAr) {
   } return outputArray.concat(leftAr.slice(i),rightAr.slice(j));
 }
 
-console.log(divide(inputArray));
+let startTime = new Date();
+console.log("Output array: " + divide(inputArray));
+let finishTime = new Date() - startTime;
+console.log("Sort time : " + finishTime + " mss");

@@ -1,5 +1,3 @@
-let inputArray = [-33,-98,5,-33,1,3,0,84,-8,1,-33];
-
 function getMinItem(array, index) {
     array = array.slice(index);
 
@@ -18,8 +16,9 @@ function sort() {
         inputArray[minIndex] = inputArray[i];
         inputArray[i] = value;
     }
+
     return inputArray;
 }
 
-console.log(sort());
+measureTime(sort);
 
